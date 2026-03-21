@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{myName}},{{laLa.title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Пишите что хотите</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+
+    <ion-list>
+    <ion-item>
+      <ion-input label=""[(ngModel)]="laLa.title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label=""[(ngModel)]="laLa.author"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label=""[(ngModel)]="laLa.description"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  </ion-card-content>
+</ion-card>
+<ion-content color="light">
+  <ion-list *ngFor="let item of todo">
+    <ion-item>
+      <ion-label>{{ item }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-button (click)="btnClick()" (click)="btnClick2()">Клик-клик</ion-button> 
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>Фамилия</ion-col>
+      <ion-col>Имя</ion-col>
+      <ion-col>Отчество</ion-col>
+      <ion-col>ID</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let item1 of books">
+      <ion-col>{{ item1.title }}</ion-col>
+      <ion-col>{{ item1.author }}</ion-col>
+      <ion-col>{{ item1.description }}</ion-col>
+      <ion-col>{{ item1.id}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+
