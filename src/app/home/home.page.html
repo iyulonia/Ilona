@@ -38,13 +38,14 @@
 
 
   <ion-button (click)="btnClick()" (click)="btnClick2()">Клик-клик</ion-button> 
+  
 
   <ion-grid>
     <ion-row>
       <ion-col>Фамилия</ion-col>
       <ion-col>Имя</ion-col>
       <ion-col>Отчество</ion-col>
-      <ion-col>ID</ion-col>
+      <ion-col>ID</ion-col> 
     </ion-row>
 
     <ion-row *ngFor="let item1 of books">
@@ -52,6 +53,9 @@
       <ion-col>{{ item1.author }}</ion-col>
       <ion-col>{{ item1.description }}</ion-col>
       <ion-col>{{ item1.id}}</ion-col>
+      <ion-col>
+        <ion-button (click)="delClick(item1.id)"><ion-icon name="backspace-outline"></ion-icon></ion-button>
+      </ion-col>
     </ion-row>
   </ion-grid>
 

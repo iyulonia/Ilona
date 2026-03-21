@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {v4} from "uuid"
 
 interface Book {
-  id: string| null;
+  id: string;
   title: string;
   author: string;
   description: string;
@@ -46,8 +46,11 @@ export class HomePage {
       description: "Иванович"
     }
   ];
+
+
+
   btnClick() {
-    this.books.push({...this.laLa})
+    this.books.push({...this.laLa, id:v4()})
     // this.books.push({
     //   id: this.books.length+1,
     //   title: this.laLa.title,
@@ -60,4 +63,9 @@ export class HomePage {
   btnClick2() {
     this.myName = this.myName + "💜";
   }
+
+  delClick(el:string){
+    this.myName =el
+    this.books=this.books.filter((record)=>record.id !== el)
+ }
 }
